@@ -1,10 +1,29 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+/* fira-sans-regular - latin */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Fira Sans Regular'), local('FiraSans-Regular'),
+       url('../fonts/fira-sans-v10-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/fira-sans-v10-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* fira-sans-italic - latin */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Fira Sans Italic'), local('FiraSans-Italic'),
+       url('../fonts/fira-sans-v10-latin-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/fira-sans-v10-latin-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
 /* configuration générale */
 
 body {
   background-color: #f7f7f7;
   color: #3b3b3b;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Fira Sans', sans-serif;
   font-size: 16px;
   line-height: 1.45em;
   text-rendering: optimizelegibility;
@@ -197,7 +216,7 @@ div.ajoutechange:hover>a {
 
 .white h1 {
   margin: 10px 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Fira Sans', sans-serif;
   font-weight: bold;
   line-height: 20px;
   color: white;
@@ -1195,7 +1214,7 @@ border-radius: 0 !important;
 }
 
 /* ajout pour les liens de partage réseaux sociaux */
-.share-text { 
+.share-text {
 	font-weight: bold;
 }
 .facebook-link {
