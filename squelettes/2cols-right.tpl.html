@@ -13,33 +13,35 @@
 
   <!-- Title of the page -->
   <title>{{configuration param="wakka_name"}} : {{currentpage}}</title>
-  
+
   <!-- Favicons -->
   <link rel="shortcut icon" type="image/x-icon" href="{{configuration param="theme_path"}}images/favicon.ico" />
   <link rel="apple-touch-icon" href="{{configuration param="theme_path"}}images/apple-touch-icon.png" />
   <link rel="icon" type="image/png" href="{{configuration param="theme_path"}}images/favicon.png" />
-  
-  {{linkstyle othercss="bootstrap/bootstrap-responsive.min.css"}}
+
+  {{linkstyle}}
   {{linkrss}}
 </head>
 
 <body {{parambody}}>
-    <div class="navbar navbar-default navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+  <div id="yw-container" class="yw-fullscreen">
+  <nav id="yw-topnav" class="navbar navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="{{configuration param="base_url"}}{{configuration param="root_page"}}">{{include page="PageTitre" doubleclic="1"}}</a>
-          <nav class="nav-collapse collapse">
-            {{include page="PageMenuHaut" class="topnavpage" doubleclic="1" actif="1"}}
-            {{include page="PageRapideHaut" class="navbar-right pull-right" doubleclic="1" actif="1"}}
-          </nav><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
+          </button>
+          <a class="navbar-brand" href="{{configuration param="base_url"}}{{configuration param="root_page"}}">{{include page="PageTitre" doubleclic="1"}}</a>
+        </div> <!-- /.navbar-header -->
+        <div class="navbar-collapse collapse">
+          {{include page="PageMenuHaut" class="yw-topnav topnavpage" doubleclic="1" actif="1"}}
+          {{include page="PageRapideHaut" class="yw-topnav-fast-access pull-right" doubleclic="1" actif="1"}}
+        </div> <!-- /.navbar-collapse -->
+      </div> <!-- /.container -->
+  </nav><!-- /#yw-topnav -->
 
   <div class="fullwidth-header">
     {{include page="PageHeader" doubleclic="1"}}
@@ -47,14 +49,14 @@
   <div class="container">
     <div class="main-body" role="main">
       <div class="row">
-        <div class="span10" {{doubleclic}}>
+        <div class="col-md-10" {{doubleclic}}>
           {WIKINI_PAGE}
-        </div><!--/span10-->
-         <div class="span2">
+        </div><!--/col-md-10-->
+         <div class="col-md-2">
           <nav class="sidebar-nav">
             {{include page="PageMenu" doubleclic="1" actif="1"}}
-          </nav><!--/.sidebar-nav -->      
-        </div><!--/span2-->
+          </nav><!--/.sidebar-nav -->
+        </div><!--/col-md-2-->
       </div><!--/row-->
     </div><!--/.main-body-->
   </div><!--/.container -->
@@ -64,6 +66,7 @@
       {{include page="PageFooter" doubleclic="1"}}
     </div>
   </footer><!-- end of footer -->
+</div>
   {{linkjavascript}}
 </body>
 </html>
