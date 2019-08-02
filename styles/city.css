@@ -4,8 +4,10 @@
   font-style: normal;
   font-weight: 400;
   src: local('Fira Sans Regular'), local('FiraSans-Regular'),
-       url('../fonts/fira-sans-v10-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('../fonts/fira-sans-v10-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('../fonts/fira-sans-v10-latin-regular.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('../fonts/fira-sans-v10-latin-regular.woff') format('woff');
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 /* fira-sans-italic - latin */
@@ -14,35 +16,63 @@
   font-style: italic;
   font-weight: 400;
   src: local('Fira Sans Italic'), local('FiraSans-Italic'),
-       url('../fonts/fira-sans-v10-latin-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('../fonts/fira-sans-v10-latin-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('../fonts/fira-sans-v10-latin-italic.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('../fonts/fira-sans-v10-latin-italic.woff') format('woff');
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
-/* couleurs utilisées */
-/*
-fond (blanc un poil cassé) : #f7f7f7
-couleur texte (gris) : #3b3b3b
-couleur principale (vert): #03a099
-couleur de lien (rouge): #ff6d66
-couleur de lien actif (gris) : #333
-couleur de contraste (blanc) : #fff (white)
-*/
+/* couleurs utilisées par le theme city par défaut */
+
 :root {
-  --bg-color:#f7f7f7;
-  --main-text-color:#3b3b3b;
-  --main-color:#03a099;
-  --link-color:#ff6d66;
-  --active-link-color:#333;
-  --white-color:#FFF;
+  /* police de caractere pour le texte */
+  --main-font: 'Fira Sans', sans-serif;
+
+  /* taille de base pour le texte */
+  --main-font-size: 16px;
+
+  /* fond (blanc un poil cassé) */
+  --bg-color: #f7f7f7;
+
+  /* couleur texte (gris) */
+  --main-text-color: #3b3b3b;
+
+  /* couleur principale (vert) */
+  --primary-color: #2b2d42;
+
+  /* couleur de lien (rouge) */
+  --link-color: #ef233c;
+
+  /* couleur de lien actif (gris) */
+  --active-link-color: #333;
+
+  /* couleur de blanc */
+  --white-color: #FFF;
+
+  /* couleur de gris */
+  --grey-color: #edf2f4;
+
+  /* couleur de succes */
+  --success-color: #4ecdc4;
+
+  /* couleur de d'info */
+  --info-color: #8d99ae;
+
+  /* couleur de risque */
+  --warning-color: #ffe066;
+
+  /* couleur de danger */
+  --danger-color: #d90429;
 }
+
 
 /* configuration générale */
 
 body {
   background-color: var(--bg-color);
   color: var(--main-text-color);
-  font-family: 'Fira Sans', sans-serif;
-  font-size: 16px;
+  font-family: var(--main-font);
+  font-size: var(--main-font-size);
   line-height: 1.45em;
   text-rendering: optimizelegibility;
   padding-top: 80px;
@@ -51,12 +81,12 @@ body {
 /* couleur de surlignage de selection de texte avec la souris */
 
 ::-moz-selection {
-  background: var(--main-color);
+  background: var(--primary-color);
   color: var(--white-color);
 }
 
 ::selection {
-  background: var(--main-color);
+  background: var(--primary-color);
   color: var(--white-color);
 }
 
@@ -97,6 +127,185 @@ p {
   margin: 10px 0;
 }
 
+/* composants bootstrap */
+.well {
+  background-color: var(--grey-color);
+  border: none;
+  box-shadow: none;
+}
+
+/* labels */
+.label {
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, .2);
+}
+
+.label-default {
+  background-color: var(--grey-color);
+  color: var(--text-color);
+}
+
+.label-primary {
+  background-color: var(--primary-color);
+}
+
+.label-success {
+  background-color: var(--success-color);
+}
+
+.label-info {
+  background-color: var(--info-color);
+}
+
+.label-warning {
+  background-color: var(--warning-color);
+}
+
+.label-danger {
+  background-color: var(--danger-color);
+}
+
+/* alertes */
+.alert {
+  border: none;
+  border-radius: 0;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, .2);
+}
+
+.alert-default {
+  background-color: var(--grey-color);
+}
+
+.alert-primary {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+.alert-success {
+  background-color: var(--success-color);
+  color: var(--white-color);
+}
+
+.alert-info {
+  background-color: var(--info-color);
+  color: var(--white-color);
+}
+
+.alert-warning {
+  background-color: var(--warning-color);
+  color: var(--white-color);
+}
+
+.alert-danger {
+  background-color: var(--danger-color);
+  color: var(--white-color);
+}
+
+/* panels */
+.panel {
+  border-radius: 0;
+  box-shadow:
+}
+
+.panel>.panel-heading {
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, .2);
+  border-radius: 0;
+  border-bottom: none;
+}
+
+.panel-default {
+  border-color: var(--grey-color);
+}
+
+.panel-default>.panel-heading {
+  background-color: var(--grey-color);
+}
+
+.panel-primary {
+  border-color: var(--primary-color);
+}
+
+.panel-primary>.panel-heading {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+.panel-success {
+  border-color: var(--success-color);
+}
+
+.panel-success>.panel-heading {
+  background-color: var(--success-color);
+  color: var(--white-color);
+}
+
+.panel-info {
+  border-color: var(--info-color);
+}
+
+.panel-info>.panel-heading {
+  background-color: var(--info-color);
+  color: var(--white-color);
+}
+
+.panel-warning {
+  border-color: var(--warning-color);
+}
+
+.panel-warning>.panel-heading {
+  background-color: var(--warning-color);
+  color: var(--white-color);
+}
+
+.panel-danger {
+  border-color: var(--danger-color);
+}
+
+.panel-danger>.panel-heading {
+  background-color: var(--danger-color);
+  color: var(--white-color);
+}
+
+/* boutons */
+.btn {
+  border: none;
+  border-radius: 0;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, .2);
+}
+
+.btn-link {
+  text-shadow: none;
+  color: var(--link-color);
+}
+
+.btn-default {
+  background-color: var(--grey-color);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+.btn-success {
+  background-color: var(--success-color);
+  color: var(--white-color);
+}
+
+.btn-info {
+  background-color: var(--info-color);
+  color: var(--white-color);
+}
+
+.btn-warning {
+  background-color: var(--warning-color);
+  color: var(--white-color);
+}
+
+.btn-danger {
+  background-color: var(--danger-color);
+  color: var(--white-color);
+}
+
 /*Page d'accueil*/
 
 .accueil1 {
@@ -115,15 +324,16 @@ p {
 
 .accueil3 {
   text-align: center;
-  link-color: var(--white-color);
+  color: var(--white-color);
   font-size: 1.6em;
   font-weight: normal;
   text-shadow: 0 0 0 var(--link-color), 0.0025em 0.0025em 0 var(--link-color), 0.005em 0.005em 0 var(--link-color), 0.0075em 0.0075em 0 var(--link-color), 0.01em 0.01em 0 var(--link-color), 0.0125em 0.0125em 0 var(--link-color), 0.015em 0.015em 0 var(--link-color), 0.0175em 0.0175em 0 var(--link-color), 0.02em 0.02em 0 var(--link-color), 0.0225em 0.0225em 0 var(--link-color), 0.025em 0.025em 0 var(--link-color), 0.0275em 0.0275em 0 var(--link-color), 0.03em 0.03em 0 var(--link-color), 0.0325em 0.0325em 0 var(--link-color), 0.035em 0.035em 0 var(--link-color), 0.0375em 0.0375em 0 var(--link-color), 0.04em 0.04em 0 var(--link-color), 0.0425em 0.0425em 0 var(--link-color), 0.045em 0.045em 0 var(--link-color), 0.0475em 0.0475em 0 var(--link-color), 0.05em 0.05em 0 var(--link-color), 0.0525em 0.0525em 0 var(--link-color), 0.055em 0.055em 0 var(--link-color), 0.0575em 0.0575em 0 var(--link-color), 0.06em 0.06em 0 var(--link-color), 0.0625em 0.0625em 0 var(--link-color), 0.065em 0.065em 0 var(--link-color), 0.0675em 0.0675em 0 var(--link-color), 0.07em 0.07em 0 var(--link-color), 0.0725em 0.0725em 0 var(--link-color), 0.075em 0.075em 0 var(--link-color), 0.0775em 0.0775em 0 var(--link-color), 0.08em 0.08em 0 var(--link-color), 0.0825em 0.0825em 0 var(--link-color), 0.085em 0.085em 0 var(--link-color), 0.0875em 0.0875em 0 var(--link-color), 0.09em 0.09em 0 var(--link-color), 0.0925em 0.0925em 0 var(--link-color), 0.095em 0.095em 0 var(--link-color), 0.0975em 0.0975em 0 var(--link-color), 0.1em 0.1em 0 var(--link-color);
   line-height: 36px;
 }
 
-.accueil3 a, .accueil3 a:visited {
-    color:var(--white-color);
+.accueil3 a,
+.accueil3 a:visited {
+  color: var(--white-color);
 }
 
 
@@ -134,7 +344,7 @@ p {
 
 #yw-topnav {
   min-height: 50px;
-  background-color: var(--main-color);
+  background-color: var(--primary-color);
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   border-radius: 0;
@@ -192,9 +402,10 @@ p {
   background-color: transparent;
 }
 
-.navbar-btn, #yw-topnav .btn-group .btn {
-	background-color: inherit;
-	border: none;
+.navbar-btn,
+#yw-topnav .btn-group .btn {
+  background-color: inherit;
+  border: none;
   color: var(--white-color);
 }
 
@@ -211,8 +422,8 @@ p {
 /* misc */
 
 .ajoutechange {
-  color: var(--main-color);
-  border: 2px solid var(--main-color);
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
   text-align: center;
   padding: 5px;
   width: 200px;
@@ -222,7 +433,7 @@ p {
 }
 
 div.ajoutechange:hover {
-  background-color: var(--main-color);
+  background-color: var(--primary-color);
   color: var(--white-color);
 }
 
@@ -238,7 +449,7 @@ div.ajoutechange:hover>a {
   margin-top: 5px !important;
 }
 
-.var(--white-color) h1 {
+.white h1 {
   margin: 10px 0;
   font-family: 'Fira Sans', sans-serif;
   font-weight: bold;
@@ -249,7 +460,7 @@ div.ajoutechange:hover>a {
   line-height: 40px;
 }
 
-.var(--white-color)bg {
+.whitebg {
   background: var(--white-color);
 }
 
@@ -287,12 +498,7 @@ div.ajoutechange:hover>a {
 #yw-footer {
   margin-top: 20px;
   padding: 19px 20px 20px;
-  background-image: url("../images/texture.svg");
-  background-repeat: repeat;
-  background-size: 7%;
-  width: 100%;
-  background-color: #f7f7f7;
-  z-index: 1000;
+  background-color: var(--grey-color);
 }
 
 .text-footer {
@@ -307,34 +513,17 @@ div.ajoutechange:hover>a {
   width: 50%;
   margin: auto;
   background-color: var(--white-color);
-  border: 3px solid var(--main-color);
+  border: 3px solid var(--primary-color);
   height: auto;
   padding-top: 6px;
   word-wrap: break-word;
   padding-bottom: 5px;
 }
 
-/* BOUTONS */
-
-.btn-primary {
-  color: var(--white-color);
-  background-color: var(--main-color);
-  border-color: var(--main-color);
-}
-
-.btn-primary:link,
-.btn-primary:visited,
-.btn-primary:hover,
-.btn-primary:active {
-  color: var(--white-color);
-  background-color: var(--link-color);
-  border-color: var(--link-color);
-}
-
 /* Zoom de l'image de background en page accueil*/
 .zoominhomepage {
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: 100%;
   background: url("../../../files/background-wikilleurbanne-©Alain-Guillemaud-2.jpg");
   background-repeat: no-repeat;
   position: fixed;
@@ -353,15 +542,34 @@ div.ajoutechange:hover>a {
 
 /* Zoom in Keyframes */
 @-webkit-keyframes zoomin {
-  0% {transform: scale(1.3);}
-  50% {transform: scale(1.5);}
-  100% {transform: scale(1.3);}
+  0% {
+    transform: scale(1.3);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
+
+  100% {
+    transform: scale(1.3);
+  }
 }
+
 @keyframes zoomin {
-  0% {transform: scale(1.3);}
-  50% {transform: scale(1.5);}
-  100% {transform: scale(1.3);}
-} /*End of Zoom in Keyframes */
+  0% {
+    transform: scale(1.3);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
+
+  100% {
+    transform: scale(1.3);
+  }
+}
+
+/*End of Zoom in Keyframes */
 
 
 
@@ -429,6 +637,7 @@ div.ajoutechange:hover>a {
     width: 100%;
     padding: .5rem;
   }
+
   .vid-info h1 {
     margin-bottom: .2rem;
   }
@@ -444,9 +653,11 @@ div.ajoutechange:hover>a {
   body.home {
     background: var(--main-text-color);
   }
+
   #video_home {
     display: none;
   }
+
   div.encart {
     margin: 0.5em;
   }
@@ -542,12 +753,12 @@ div.encart>h4 {
 
 .btn-wikilleurbanne {
   color: var(--link-color);
-  border: 2px solid var(--main-color);
+  border: 2px solid var(--primary-color);
   border-radius: 0;
 }
 
 .btn-wikilleurbanne:hover {
-  background-color: var(--main-color);
+  background-color: var(--primary-color);
   color: var(--white-color);
 }
 
@@ -574,7 +785,7 @@ div.encart>h4 {
   margin-bottom: 20px;
   background-color: var(--white-color);
   border: 3px solid transparent;
-  border-color: var(--main-color);
+  border-color: var(--primary-color);
   border-radius: 0px;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
   box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
@@ -589,7 +800,7 @@ div.encart>h4 {
 .filters .panel-default>.panel-heading {
   color: var(--white-color);
   text-transform: uppercase;
-  background-color: var(--main-color);
+  background-color: var(--primary-color);
   border-radius: 0px;
   border-color: transparent;
 }
@@ -605,7 +816,8 @@ div.encart>h4 {
 .filters .panel-emploibenevolat>.panel-heading {
   color: var(--white-color);
   text-transform: uppercase;
-  background-color: ##1ab0a0;;
+  background-color: ##1ab0a0;
+  ;
   border-radius: 0px;
   border-color: transparent;
 }
@@ -622,12 +834,12 @@ div.encart>h4 {
 /* elements formulaire */
 
 .form-control {
-  border: 1px solid var(--main-color);
+  border: 1px solid var(--primary-color);
 }
 
 .input-group-addon {
-  border: 1px solid var(--main-color);
-  background: var(--main-color);
+  border: 1px solid var(--primary-color);
+  background: var(--primary-color);
   color: var(--white-color);
 }
 
@@ -647,8 +859,8 @@ div.encart>h4 {
 
 .fc-bootstrap3 .btn-default {
   background: none;
-  color: var(--main-color);
-  border-color: var(--main-color);
+  color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 
 .fc-bootstrap3 .btn-default:hover,
@@ -780,13 +992,13 @@ div.encart>h4 {
 .ItemAgenda {
   margin-bottom: 0.5em;
   padding-bottom: 0.5em;
-  border-bottom: 3px solid var(--main-color);
+  border-bottom: 3px solid var(--primary-color);
 }
 
 .ItemAgendaleft {
   text-align: center;
   font-weight: bold;
-  color: var(--main-color);
+  color: var(--primary-color);
   font-variant: small-caps;
 }
 
@@ -867,8 +1079,8 @@ div.encart>h4 {
 /* Liste des actualités sur la page dédiée */
 
 .ajoutactu {
-  color: var(--main-color);
-  border: 2px solid var(--main-color);
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
   text-align: center;
   padding: 5px;
   width: 200px;
@@ -878,7 +1090,7 @@ div.encart>h4 {
 }
 
 div.ajoutactu:hover {
-  background-color: var(--main-color);
+  background-color: var(--primary-color);
   color: var(--white-color);
 }
 
@@ -921,7 +1133,7 @@ div.ajoutactu:hover>a {
 .BlocActu>h4>a,
 .slider-text h4 a {
   text-transform: uppercase;
-  color: var(--main-color);
+  color: var(--primary-color);
   line-height: 1em;
 }
 
@@ -958,17 +1170,17 @@ div.ajoutactu:hover>a {
 .pagination>li>span:focus,
 .pagination>li>span:hover {
   color: var(--white-color);
-  background-color: var(--main-color);
-  border-color: var(--main-color);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 
 .pagination>li>a,
 .pagination>li>span {
   padding: 2px 8px;
-  color: var(--main-color);
+  color: var(--primary-color);
   text-decoration: none;
   background-color: transparent;
-  border: 1px solid var(--main-color);
+  border: 1px solid var(--primary-color);
   font-size: 12px;
 }
 
@@ -979,8 +1191,8 @@ div.ajoutactu:hover>a {
 .pagination>.active>span:focus,
 .pagination>.active>span:hover {
   color: var(--white-color);
-  background-color: var(--main-color);
-  border-color: var(--main-color);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 
 /* BLOC A DROITE INFORMATIONS SUR L'ASSOCIATION */
@@ -1013,14 +1225,14 @@ div.ajoutactu:hover>a {
 }
 
 .FicheActu {
-	float: left;
-	width: 70%;
-	}
+  float: left;
+  width: 70%;
+}
 
 .ImageActu {
-	float: right;
-	width: 30%;
-	}
+  float: right;
+  width: 30%;
+}
 
 .fiche-asso h2,
 .fiche-asso h3,
@@ -1073,15 +1285,6 @@ div.ajoutactu:hover>a {
   padding: 1em;
 }
 
-/* alert */
-
-.alert-info {
-  color: var(--white-color);
-  background-color: #e1be3b;
-  border: none;
-  border-radius: 0;
-}
-
 /* tweaks pour la carto des lieux */
 
 .carte-lieux .results {
@@ -1121,24 +1324,30 @@ div.ajoutactu:hover>a {
     font-size: .8em;
     padding-top: 18px;
   }
+
   #yw-topnav .navbar-nav>li {
     padding-right: 0;
   }
+
   #yw-topnav .navbar-nav>li>a {
     font-size: .8em;
     padding: 15px 7px;
   }
+
   .yw-topnav-fast-access {
     font-size: .8em;
     margin-top: 10px !important;
   }
+
   .yw-topnav-fast-access [href="#LoginModal"] {
     font-size: 0;
     padding-top: 8px;
   }
+
   .yw-topnav-fast-access [href="#LoginModal"] i {
     font-size: 12px;
   }
+
   .yw-topnav-fast-access .btn-link {
     margin-top: -24px !important;
   }
@@ -1148,16 +1357,20 @@ div.ajoutactu:hover>a {
   #yw-topnav .navbar-nav>li {
     padding-right: 0;
   }
+
   .yw-topnav-fast-access {
     margin-top: 15px !important;
   }
+
   .yw-topnav-fast-access [href="#LoginModal"] {
     font-size: 0;
     padding-top: 3px;
   }
+
   .yw-topnav-fast-access [href="#LoginModal"] i {
     font-size: 12px;
   }
+
   .yw-topnav-fast-access .btn-link {
     margin-top: -21px !important;
   }
@@ -1165,102 +1378,80 @@ div.ajoutactu:hover>a {
 
 /********************** Barre de recherche accueil ***************************/
 
-.barre_recherche
-{
+.barre_recherche {
   margin: auto;
   margin-top: 1em;
   margin-bottom: 1em;
- width: 80%;
- border: 2px solid var(--main-color);
- text-align: center;
+  width: 80%;
+  border: 2px solid var(--primary-color);
+  text-align: center;
 
 }
 
-.input-group-lg > .form-control
-{
- border-radius: 0px;
+.input-group-lg>.form-control {
+  border-radius: 0px;
 }
 
-.btn-main-search
-{
- background-image:url("/files/Design/magnifier.svg") !important;
- background-size: 60% 60%;
- background-position: center;
- background-repeat: no-repeat;
- border-radius: 0px;
- height: 50px;
- width: 55px;
-border-radius: 0 !important;
+.btn-main-search {
+  background-image: url("/files/Design/magnifier.svg") !important;
+  background-size: 60% 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 0px;
+  height: 50px;
+  width: 55px;
+  border-radius: 0 !important;
 }
 
-/* .input-group-addon, .input-group-btn
-{
-  width: 6%;
-}
-
-.form-control:focus
-{
-  border-color: var(--main-color);
-}
-
-.btn-primary
-{
- background-color: var(--main-color);
- border: none;
-}
-
-.btn-primary:hover
-{
-  background-color: var(--main-color);
-  background-size: 70% 70%;
-} */
-
-.formulaire_recherche
-{
-    margin: 0 auto;
-   margin-left: auto;
-   margin-right: auto;
+.formulaire_recherche {
+  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 
   min-height: 8em !important;
   margin-top: 5em;
   display: block;
 }
 
-.click-to-toggle{
-   cursor: pointer
+.click-to-toggle {
+  cursor: pointer
 }
 
 .col-md-5 {
 
-    padding-right: 5px;
-    padding-left: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
 
 }
 
 /* ajout pour les liens de partage réseaux sociaux */
 .share-text {
-	font-weight: bold;
+  font-weight: bold;
 }
+
 .facebook-link {
-	display: inline-block;
-	color:#4460a0;
-	font-size:.8em;
-	font-weight: bold;
-	text-transform: uppercase;
+  display: inline-block;
+  color: #4460a0;
+  font-size: .8em;
+  font-weight: bold;
+  text-transform: uppercase;
 }
+
 .facebook-link:hover {
-	text-decoration: none;
-	color:#4460a0dd;
+  text-decoration: none;
+  color: #4460a0dd;
 }
+
 .twitter-link {
-	display: inline-block;
-	margin-left:1em;
-	color:#1da1f3;
-	font-size:.8em;
-	font-weight: bold;
-	text-transform: uppercase;
+  display: inline-block;
+  margin-left: 1em;
+  color: #1da1f3;
+  font-size: .8em;
+  font-weight: bold;
+  text-transform: uppercase;
 }
+
 .twitter-link:hover {
-	text-decoration: none;
-	color:#1da1f3dd;
+  text-decoration: none;
+  color: #1da1f3dd;
 }
