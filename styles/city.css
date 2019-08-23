@@ -42,6 +42,7 @@
 
   /* couleur de lien (rouge) */
   --link-color: #ef233c;
+  --link-hover-color: #ffe066;
 
   /* couleur de lien actif (gris) */
   --active-link-color: #333;
@@ -75,7 +76,7 @@ body {
   font-size: var(--main-font-size);
   line-height: 1.45em;
   text-rendering: optimizelegibility;
-  padding-top: 80px;
+  padding-top: 50px;
 }
 
 /* couleur de surlignage de selection de texte avec la souris */
@@ -384,13 +385,13 @@ p {
 }
 
 #yw-topnav .nav>li>a:focus,
-.navbar .nav>li>a:hover {
-  color: var(--link-color);
+#yw-topnav .nav>li>a:hover {
+  color: var(--link-hover-color);
   text-decoration: none;
 }
 
 #yw-topnav .navbar-nav>.active>a {
-  color: var(--active-link-color);
+  color: var(--link-color);
   background-color: transparent;
   font-weight: 700;
 }
@@ -398,7 +399,7 @@ p {
 #yw-topnav .navbar-nav>.active>a,
 #yw-topnav .navbar-nav>.active>a:focus,
 #yw-topnav .navbar-nav>.active>a:hover {
-  color: var(--active-link-color);
+  color: var(--link-color);
   background-color: transparent;
 }
 
